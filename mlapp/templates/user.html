@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My MLAPP</title>
+    </head>
+    <body>
+        <h1>USER LIST</h1>
+
+        <ul>
+            {%for x in users%}
+            <li>
+                {{x.name}}
+            </li>
+            {%endfor%}
+        </ul>
+      
+    </body>
+</html>
