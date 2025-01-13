@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import userview
+from . import views
 
 urlpatterns = [
-    path("", userview, name='users')
+    path('', views.predict_price, name='predict_price'),
 ]

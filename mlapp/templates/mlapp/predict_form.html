@@ -1,0 +1,33 @@
+<!-- mlapp/templates/mlapp/predict_form.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+</head>
+<body>
+    <h1>House Price Prediction</h1>
+    <form method="get" action="{% url 'predict_price' %}">
+        <label for="bedrooms">Bedrooms:</label>
+        <input type="number" name="bedrooms" required><br><br>
+
+        <label for="bathrooms">Bathrooms:</label>
+        <input type="number" name="bathrooms" required><br><br>
+
+        <label for="size">Size (sq ft):</label>
+        <input type="number" name="size" required><br><br>
+
+        <input type="submit" value="Predict Price">
+    </form>
+
+    {% if predicted_price %}
+        <h2>Predicted Price: ${{ predicted_price }}</h2>
+    {% endif %}
+
+    {% if error %}
+        <h2>{{ error }}</h2>
+    {% endif %}
+</body>
+</html>
